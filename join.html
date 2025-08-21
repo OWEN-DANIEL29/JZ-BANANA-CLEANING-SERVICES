@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+    <div class="section">
+        <div class="info">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.dignissimos, tempora vitae quas ratione repellendus ipsum harum numquam accusantium magnam, labore er</p>
+           <li>
+            <img src="addrees.png" alt="" class="icon"><p class="span1">UMUAHIA OFFICE: km 6, Ikot Ekpene Road, Umuahia, Abia State <br>lAGOS OFFICE: 1 poko Bus stop,Lagos Mainland</p>
+           </li>
+           <li>
+            <img src="phone.png" alt="" class="icon"><p class="span1">08085150561 08100141422</p>
+           </li>
+           <li>
+            <img src="email.png" alt="" class="icon"><p class="span1">emmahjune15@gmail.com</p>
+           </li>
+        
+        </div>
+        <div class="hero">
+            <form action="" id="form">
+               <input type="text" placeholder="Input Your Name" id="name"><br>
+               <span id="errmsg" class="errmsg"></span><br>
+               <input type="email" placeholder="Input Your Email" id="email"><br>
+                <span id="errmsg1" class="errmsg"></span><br>
+               <input type="tel" placeholder="Input Your phone" id="phone"><br>
+                <span id="errmsg2" class="errmsg"></span><br>
+               <input type="text" placeholder="Your Address" id="address"><br>
+                <span id="errmsg3" class="errmsg"></span><br>
+               <textarea name="message" id="message" placeholder="Message" ></textarea><br>
+                <span id="errmsg4" class="errmsg"></span><br>
+               <button type="submit">BOOK NOW</button>
+            </form>
+        </div>
+    </div>
+    <p class="lion">Booking services @JZBanana cleaning services</p>
+    <script>
+  document.getElementById('form').addEventListener( "submit", function (e){
+    e.preventDefault();
+
+    const name= document.getElementById('name').value.trim()
+    const email = document.getElementById('email').value.trim()
+    const phone = document.getElementById('phone').value.trim()
+    const address = document.getElementById('address').value.trim()
+    const message = document.getElementById('message').value.trim()
+
+    const errmsg= document.getElementById('errmsg').textContent= ''
+     const errmsg1= document.getElementById('errmsg').textContent= ''
+      const errmsg2= document.getElementById('errmsg').textContent= ''
+       const errmsg3= document.getElementById('errmsg').textContent= ''
+        const errmsg4= document.getElementById('errmsg').textContent= ''
+    let valid= true
+
+    if (name==='' && name<3) {
+      document.getElementById('errmsg').textContent= "invalid Name"
+      valid= false 
+    }
+    if ( email==='' ){
+        document.getElementById('errmsg1').textContent= 'invalid email'
+        valid= false
+    }
+    if ( phone==='' &&  phone.length >11 ){
+        document.getElementById('errmsg2').textContent= 'invalid phonenumber'
+         valid= false
+    }
+    if ( address==='' ){
+        document.getElementById('errmsg3').textContent= 'invalid address'
+         valid= false
+    }
+    if ( message==='' ){
+        document.getElementById('errmsg4').textContent= 'mesage required'
+         valid= false
+    }
+    if(valid){
+        alert('submitting form')
+    }
+  })
+    </script>
+</body>
+</html>
